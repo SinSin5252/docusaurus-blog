@@ -9,7 +9,7 @@
 .cache-loader
 
 *.env
-!example.env
+#!example.env
 
 # Misc
 .DS_Store
