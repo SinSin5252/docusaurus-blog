@@ -3,7 +3,7 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import {config as dotenvconfig}  from "dotenv";
 
-dotenvconfig({path: "./"});
+dotenvconfig({path: "example.env"});
 //dotenvconfig();
 
 console.log(process.env);
