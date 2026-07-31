@@ -3,10 +3,11 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import {config as dotenvconfig}  from "dotenv";
 
-dotenvconfig({path: "example.env"});
-//dotenvconfig();
+//dotenvconfig({path: "example.env"});
+dotenvconfig();
 
-console.log(process.env);
+//console.log(process.env);
+//console.log(process.env.GIT_PROFILE);
 
 /* TODO: change to read configuration from environment */
 const blogEnabled = Boolean(process.env.BLOG_ENABLED === 'true')
@@ -17,7 +18,7 @@ const config: Config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: process.env.DEPLOYMENT_URL ?? "https://spmse.github.io",
+  url: process.env.DEPLOYMENT_URL ?? "https://SinSin5252.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: process.env.BASE_URL ?? "/",
@@ -49,7 +50,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/spmse/dev-blog-template',
+            process.env.GIT_REPOSITORY_URL,
         },
         blog: blogEnabled ? 
           {
@@ -61,7 +62,7 @@ const config: Config = {
             // Please change this to your repo.
             // Remove this to remove the "edit this page" links.
             editUrl:
-              'https://github.com/spmse/dev-blog-template',
+              process.env.GIT_REPOSITORY_URL,
             // Useful options to enforce blogging best practices
             onInlineTags: 'warn',
             onInlineAuthors: 'warn',
@@ -79,7 +80,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'My Study Site',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -92,7 +93,7 @@ const config: Config = {
           label: 'Docs',
         },
         {
-          href: 'https://github.com/spmse/dev-blog-template',
+          href: process.env.GIT_REPOSITORY_URL,
           label: 'Github',
           position: 'right',
         },
@@ -108,22 +109,10 @@ const config: Config = {
               label: 'Tutorial',
               to: '/docs/guides/intro',
             },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: 'Projects',
+              to: '/docs/projects/overview'
+
             },
           ],
         },
@@ -131,13 +120,17 @@ const config: Config = {
           title: 'More',
           items: [
             {
+              label: 'Template',
+              href: process.env.GIT_POJECT_TEMPLATE,
+            },
+            {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            }
+              href: process.env.GIT_PROFILE,
+            },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Sven Patrick Meier (spmse). Built with Docusaurus and 💚.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Sinan Saglam (SinSin5252). Built with Docusaurus and extended from the developer-akademie-starter.`,
     },
     prism: {
       theme: prismThemes.github,
@@ -164,7 +157,7 @@ if (blogEnabled) {
   (config.themeConfig.navbar as any).items.push({to: '/blog', label: 'Blog', position: 'left'});
   (
     config.themeConfig.footer as any
-  ).links[2].items.push({
+  ).links[1].items.push({
     to: '/blog',
     label: 'Blog',
   });
