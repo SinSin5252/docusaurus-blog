@@ -3,11 +3,9 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import {config as dotenvconfig}  from "dotenv";
 
-//dotenvconfig({path: "example.env"});
+
 dotenvconfig();
 
-//console.log(process.env);
-//console.log(process.env.GIT_PROFILE);
 
 /* TODO: change to read configuration from environment */
 const blogEnabled = Boolean(process.env.BLOG_ENABLED === 'true')
