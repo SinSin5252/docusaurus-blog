@@ -81,7 +81,7 @@ const config: Config = {
       title: 'My Study Site',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: 'img/perrylogo.svg',
       },
       items: [
         {
