@@ -5,7 +5,7 @@ import {config as dotenvconfig}  from "dotenv";
 
 
 
-dotenvconfig();
+dotenvconfig({path: "example.env"});
 
 
 /* TODO: change to read configuration from environment */
