@@ -78,6 +78,8 @@ New content can be added as follows:
 
 ## Deployment
 
+The website is automatically deployed to GitHub Pages using a pre-configured GitHub Actions workflow. Every commit pushed to the main branch triggers the workflow, which builds and publishes the site.
+
 ### Deploy to Github Pages
 
 To deploy using SSH:
@@ -98,8 +100,3 @@ If you are using GitHub pages for hosting, this command is a convenient way to b
 
 To deploy the site using NGINX and Docker, follow this [guide](./docs/guides/deploy-docusaurus-with-docker-and-nginx.md)
 
-### Contributing
-
-Currently, this project does not seek collaborators, but we're open to suggestions regarding enhancements or guides to prepare.
-Open an issue with a detailed description on the change you suggest and elaborate why it's benefitial for the project and vast majority.
-If accepted in the discussion, open a pull request from your fork of this repository to contribute your changes.
