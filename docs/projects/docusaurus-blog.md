@@ -2,7 +2,7 @@
 
 This Docusaurus blog was created using a template and customized to fit my blog project.
 
-## TOC
+## Table of Content
 
 - [Customizing](#customizing)
     - [Main Page](#main_page)
@@ -35,7 +35,7 @@ const config: Config = {
 }
 ```
 
-The `editUrl` ist the parameter which contains the link to the Git repository. The placeholder can be defined in the .env file, which has to be created first. For orientation see example.env
+The `editUrl` ist the parameter which contains the link to the Git repository. The placeholder can be defined in a .env file, which has to be pointed in the funktion `dotenvconfig()`. For orientation see [example.env](../../example.env)
 
 ```jsx title="/docusaurus.config.ts"
 editUrl:
@@ -120,4 +120,3 @@ After reducing the index this section of the configuration has to be removed.
         },
 ```
 
-## Deployment
