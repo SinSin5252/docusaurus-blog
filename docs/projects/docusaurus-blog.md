@@ -1,27 +1,69 @@
 # Docusaurus Blog Setup
 
-This Docusaurus blog was created using a template and customized to fit my blog project.
+This website is built using this [template](https://github.com/Developer-Akademie-DevSecOpsKurs/dev-blog-template) and customized to fit my blog project.
 
-## Table of Content
+## Table of Contents
 
-- [Customizing](#customizing)
-    - [Main Page](#main_page)
-    - [Navigation Bar](#navigation_bar)
+  - [Quickstart](#quickstart)
+    - [Prerequisites](#prerequisites)
+  - [Usage](#usage)
+    - [Repository Structure](#repository-structure)
+    - [Main Page](#main-page)
+    - [Navigation Bar](#navigation-bar)
     - [Footer](#footer)
-- [Deployment](#deployment)
 
 
-##  Customizing 
+## Quickstart
+
+### Prerequisites
 
 import GithubLinkAdmonition from '@site/src/components/GithubLinkAdmonition';
 
 <GithubLinkAdmonition 
     link="https://github.com/spmse/dev-blog-template"
-    title="Github Tip" 
-    type="tip"
+    title="Template Info" 
+    type="info"
 >
 Checkout this repository to see the code/implementation
 </GithubLinkAdmonition>
+
+- [Node.js](https://nodejs.org/) (v16 or later recommended)
+
+
+1. Installation
+
+   ```
+   $ npm install
+   ```
+
+2. Local Development
+
+   ```
+   $ npm start
+   ```
+
+   This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server. You can also open your local site with `localhost:3000` on your browser if it won't open automaticly.
+
+
+
+##  Usage
+
+### Repository Structure
+
+The repository is organized as follows:
+
+- `blog/`: Contains markdown files for blog posts. Blog-related metadata is automatically picked up by the Docusaurus configuration.
+- `docs/`: Contains markdown files for documentation. These files are referenced in `sidebars.ts` to define the sidebar structure.
+- `src/`: Contains custom React components, CSS, and JavaScript for additional functionality or theming.
+- `static/`: Stores static assets (e.g., images, icons) served directly without processing.
+- `sidebars.ts`: Configures the structure of sidebars in the documentation section.
+- `docusaurus.config.ts`: Main configuration file for customizing and managing Docusaurus behavior.
+- `build/`: Generated after running the `npm build` command. Contains the static website files ready for deployment.
+
+New content can be added as follows:
+
+- Add new documentation files to the `docs/` folder.
+- Add new blog posts to the `blog/` folder. No additional configuration is required.
 
 ### Main Page
 
@@ -35,7 +77,7 @@ const config: Config = {
 }
 ```
 
-The `editUrl` ist the parameter which contains the link to the Git repository. The placeholder can be defined in a .env file, which has to be pointed in the funktion `dotenvconfig()`. For orientation see [example.env](../../example.env)
+The `editUrl` ist the parameter which contains the link to the Git repository. The placeholder can be defined in a `.env` file, which has to be pointed in the funktion `dotenvconfig()` in `docusaurus.config.ts` . For orientation see [example.env](../../example.env)
 
 ```jsx title="/docusaurus.config.ts"
 editUrl:
@@ -75,7 +117,7 @@ themeConfig: {
 }
 ```
 To enable the Blog button on the navigation bar, the `BLOG_ENABLED` value has to be added to the
-.env file and set it `true`
+`.env` file and set it `true`
 
 ```jsx title="/.env"
  BLOG_ENABLED=true
@@ -84,7 +126,7 @@ To enable the Blog button on the navigation bar, the `BLOG_ENABLED` value has to
 
 ### Footer
 
-For this project the Community colum in the footer was removed. To reduce the amount of the colums in the footer, the index of `.links[i].` changed to 1.
+For this project the "Community" colum is removed from the footer. To reduce the amount of the colums, the index of `.links[i].` set to 1.
 
 ```jsx title="/docusaurus.config.ts"
 if (blogEnabled) {
@@ -97,8 +139,7 @@ if (blogEnabled) {
   });
 }
 ```
-
-After reducing the index this section of the configuration has to be removed.
+ This section of the configuration has to be removed after changing the index.
 
 ```jsx title="/docusaurus.config.ts"
 {
