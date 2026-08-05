@@ -69,7 +69,7 @@ New content can be added as follows:
 
 This section changes the title and the tagline
 
-```jsx title="/docusaurus.config.ts""
+```jsx title="/docusaurus.config.ts"
 const config: Config = {
   title: "Sinan's DevSecOps Study Journal",
   tagline: 'Sinan Saglam - DevSecOps Enthusiast with a passion for details and efficiency',
@@ -77,7 +77,7 @@ const config: Config = {
 }
 ```
 
-The `editUrl` ist the parameter which contains the link to the Git repository. The placeholder can be defined in a `.env` file, which has to be pointed in the funktion `dotenvconfig()` in `docusaurus.config.ts` . For orientation see [example.env](../../example.env)
+The `editUrl` is the parameter which contains the link to the Git repository. The placeholder can be defined in a `.env` file, which has to be pointed in the funktion `dotenvconfig()` in `docusaurus.config.ts` . For orientation see [example.env](../../example.env)
 
 ```jsx title="/docusaurus.config.ts"
 editUrl:
