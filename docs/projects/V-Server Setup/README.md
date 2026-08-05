@@ -233,4 +233,4 @@ Server:
 sudo service nginx restart
 ```
 
-You should now see your own HTML homepage in your browser if you enter the ip adress from the server in to the search bar.
+You should now see your own HTML homepage in your browser if you enter the `<Server_IP_ADRESS>:8081` in to the search bar.
