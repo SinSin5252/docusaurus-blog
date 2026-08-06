@@ -12,7 +12,6 @@ This website is built using this [template](https://github.com/Developer-Akademi
     - [Navigation Bar](#navigation-bar)
     - [Footer](#footer)
 
-
 ## Quickstart
 
 ### Prerequisites
@@ -29,22 +28,26 @@ Checkout this repository to see the code/implementation
 
 - [Node.js](https://nodejs.org/) (v16 or later recommended)
 
+navigate to your working directory
 
-1. Installation
+1. Clone Git Repository
+```bash
+git clone https://github.com/spmse/dev-blog-template.git
+```
+
+2. Installation
 
    ```
-   $ npm install
+   npm install
    ```
 
-2. Local Development
+3. Local Development
 
    ```
-   $ npm start
+   npm start
    ```
 
    This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server. You can also open your local site with `localhost:3000` on your browser if it won't open automaticly.
-
-
 
 ##  Usage
 
@@ -85,7 +88,6 @@ editUrl:
 
 ```
 
-
 ### Navigation Bar
 
 This section defines the title and the logo on the top left corner with the items. The items can be placed left or right and can defined as a weblink or as a connection to the sidebar content.
@@ -123,7 +125,6 @@ To enable the Blog button on the navigation bar, the `BLOG_ENABLED` value has to
  BLOG_ENABLED=true
 ```
 
-
 ### Footer
 
 For this project the "Community" colum is removed from the footer. To reduce the amount of the colums, the index of `.links[i].` set to 1.
@@ -160,4 +161,3 @@ if (blogEnabled) {
           ],
         },
 ```
-
